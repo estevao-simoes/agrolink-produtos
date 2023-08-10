@@ -58,21 +58,21 @@ def insert_product_formulas(product_details, ingredients):
     data = []
 
     for product_id, details in product_details.items():
-        
         print(f"Inserting product formula {product_id} of {len(product_details)}")
-        
+
         for detail in details:
-            
             print(f"Inserting ingredient {detail['ingredient']}")
 
             ingredient_id = ingredients.index(detail["ingredient"]) + 1
-            
-            data.append({
-                "product_id": product_id,
-                "ingredient_id": ingredient_id,
-                "quantity": detail["quantity"],
-                "unit": detail["unit"]
-            })
+
+            data.append(
+                {
+                    "product_id": product_id,
+                    "ingredient_id": ingredient_id,
+                    "quantity": detail["quantity"],
+                    "unit": detail["unit"],
+                }
+            )
 
     df = pd.DataFrame(data, columns=["product_id", "ingredient_id", "quantity", "unit"])
 
@@ -83,6 +83,7 @@ def insert_product_formulas(product_details, ingredients):
         index=False,
         chunksize=10000,
     )
+
 
 def insert_ingredients(ingredients):
     df = pd.DataFrame(ingredients, columns=["name"])
