@@ -7,8 +7,7 @@ import pandas as pd
 from lib import database
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-# file_name = f"products_{timestamp}.csv"
-file_name = "products_20230810131029.csv"
+file_name = f"products_{timestamp}.csv"
 
 
 def main():
