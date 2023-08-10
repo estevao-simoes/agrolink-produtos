@@ -1,6 +1,9 @@
 # agrolink-produtos
 ETL para consumir e estruturar dados de produtos do site Agrolink
 
+## Ambiente
+- `Python 3.9.17`
+- `python -m venv`
 
 ## Rodando
 1. `python venv`
